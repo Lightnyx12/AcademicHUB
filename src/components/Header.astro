@@ -1,6 +1,4 @@
 ---
-import {Image} from 'astro:assets';
-import logo from "./public/images/AcademicHUB.png";
 const links = [
   { name: 'Inicio', href: '#inicio' },
   { name: 'Crear Propuesta', href: '#crear-propuesta' },
@@ -15,7 +13,7 @@ const links = [
     class="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-8 py-4"
   >
     <a href="#inicio" class="flex items-center gap-1 group">
-      <Image src={logo} alt="Academic Hub" class="w-8 h-8" />
+      <img src="/images/AcademicHUB.png" alt="Academic Hub" class="w-8 h-8" />
       <span class="font-heading font-semibold text-navy tracking-tight"
         >Academic Hub</span
       >
