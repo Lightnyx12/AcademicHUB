@@ -1,26 +1,27 @@
 ---
 import Form from "../proposal/Form.astro";
-import SectionHeading from "../SectionHeading.astro"
---- 
+import SectionHeading from "../SectionHeading.astro";
+---
 
-<section class="mx-auto max-w-7xl px-5 sm:px-8 py-16 scroll-mt-20">
+<section
+  id="crear-propuesta"
+  class="mx-auto max-w-7xl px-5 sm:px-8 py-16 scroll-mt-20"
+>
   <div class="grid md:grid-cols-12 gap-10">
     <div class="md:col-span-4">
-      <SectionHeading  
-       eyebrow="Nueva propuesta"
+      <SectionHeading
+        eyebrow="Nueva propuesta"
         title="Propón el próximo webinar"
         description="Contanos qué te gustaría aprender. Tu idea será revisado por nuestro equipo "
       />
     </div>
-    <div class="md:col-span-8 rounded-sm border border-navy/12 bg-paper-raised p-6 sm:p-8">
-      <Form 
-      id="propuesta-form"/>
+    <div
+      class="md:col-span-8 rounded-sm border border-navy/12 bg-paper-raised p-6 sm:p-8"
+    >
+      <Form id="propuesta-form" />
     </div>
   </div>
 </section>
-
-  
-
 
 <script>
   import { supabase } from "../../lib/supabase";
@@ -46,6 +47,7 @@ import SectionHeading from "../SectionHeading.astro"
       titulo: data.get("titulo") as string,
       tema: data.get("tema") as string,
       plataforma: (data.get("plataforma") as string) || null,
+      area: (data.get("area") as string) || null,
     });
 
     if (error) {

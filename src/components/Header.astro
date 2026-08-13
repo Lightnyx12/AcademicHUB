@@ -1,8 +1,8 @@
 ---
 const links = [
-  { name: 'Inicio', href: '#inicio' },
-  { name: 'Crear Propuesta', href: '#crear-propuesta' },
-  { name: 'Temas', href: '#temas' },
+  { name: "Inicio", href: "#inicio" },
+  { name: "Crear Propuesta", href: "#crear-propuesta" },
+  { name: "Temas", href: "#temas" },
 ];
 ---
 
@@ -10,7 +10,7 @@ const links = [
   class="sticky top-0 z-40 border-b border-navy/10 bg-paper/90 backdrop-blur"
 >
   <div
-    class="mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-8 py-4"
+    class="relative mx-auto flex max-w-7xl items-center justify-between px-3 sm:px-8 py-4"
   >
     <a href="#inicio" class="flex items-center gap-1 group">
       <img src="/images/AcademicHUB.png" alt="Academic Hub" class="w-8 h-8" />
@@ -18,66 +18,56 @@ const links = [
         >Academic Hub</span
       >
     </a>
-
     <nav
-      class="hidden md:flex items-center gap-8"
+      class="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-8"
       aria-label="Navegación principal"
     >
       {
         links.map((link) => (
           <a
             href={link.href}
-            class="font-heading text-[0.82rem] font-semibold uppercase tracking-tight text-navy/70 hover:text-orange transition-colors"
+            class="font-heading text-[0.85rem] font-semibold uppercase tracking-tight text-navy/70 hover:text-orange transition-colors"
           >
             {link.name}
           </a>
         ))
       }
     </nav>
-
-    <div class="hidden md:block">
-      <a
-        href="#crear-propuesta"
-        class="font-mono text-[0.78rem] uppercase tracking-wide bg-navy text-paper px-4 py-2 rounded-sm hover:bg-orange transition-colors"
-      >
-        Proponer un tema
-      </a>
-    </div>
-
-    <button
-      id="mobile-menu-toggle"
-      type="button"
-      class="md:hidden flex flex-col gap-1.5 p-2"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-      aria-label="Abrir menú"
-    >
-      <span class="block h-[1.5px] w-6 bg-navy"></span>
-      <span class="block h-[1.5px] w-6 bg-navy"></span>
-      <span class="block h-[1.5px] w-4 bg-navy"></span>
-    </button>
   </div>
 
-  <nav
-    id="mobile-menu"
-    class="md:hidden hidden border-t border-navy/10 bg-paper px-5 py-4 flex flex-col gap-4"
-    aria-label="Navegación móvil"
+  <button
+    id="mobile-menu-toggle"
+    type="button"
+    class="md:hidden flex flex-col gap-1.5 p-2"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+    aria-label="Abrir menú"
   >
-    {
-      links.map((link) => (
-        <a
-          href={link.href}
-          class="font-mono text-sm uppercase tracking-wide text-navy/80"
-        >
-          {link.name}
-        </a>
-      ))
-    }
-    <a
-      href="#crear-propuesta"
-      class="font-mono text-sm uppercase tracking-wide bg-navy text-paper px-4 py-2 rounded-sm text-center"
-    >
-      Proponer un tema
-    </a>
-  </nav>
+    <span class="block h-[1.5px] w-6 bg-navy"></span>
+    <span class="block h-[1.5px] w-6 bg-navy"></span>
+    <span class="block h-[1.5px] w-4 bg-navy"></span>
+  </button>
 </header>
+
+<nav
+  id="mobile-menu"
+  class="md:hidden hidden border-t border-navy/10 bg-paper px-5 py-4 flex flex-col gap-4"
+  aria-label="Navegación móvil"
+>
+  {
+    links.map((link) => (
+      <a
+        href={link.href}
+        class="font-mono text-sm uppercase tracking-wide text-navy/80"
+      >
+        {link.name}
+      </a>
+    ))
+  }
+  <a
+    href="#crear-propuesta"
+    class="font-mono text-sm uppercase tracking-wide bg-navy text-paper px-4 py-2 rounded-sm text-center"
+  >
+    Proponer un tema
+  </a>
+</nav>
